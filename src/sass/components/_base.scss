@@ -1,0 +1,193 @@
+/**
+ * @section Base Styles
+ */
+$font: 'Oswald', sans-serif;
+$size-small: 1rem;
+$size-medium: 1.8rem;
+$size-large: 3rem;
+$size-x-large: 5rem;
+
+$red: #cc0000;
+$white: #ffffff;
+$black:#000000;
+
+html {
+font-size: 62.5%;
+-webkit-font-smoothing: antialiased;
+-moz-osx-font-smoothing: grayscale;
+}
+
+body {
+	font-size: 10px;
+  font-size: $size-medium;
+  color: $white;
+  font-family: $font;
+  background: $black;
+  opacity: 0;
+  transition: all 0.5s ease;
+  transition-delay: 0.5s;
+  &.js-enabled {
+    opacity: 1;
+  }
+}
+
+//form
+%reset-block-model {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background: transparent;
+  border-radius: 0;
+  box-sizing: border-box;
+  display: block;
+  margin: 0;
+  outline: none;
+  padding: 0;
+  width: 100%;
+  color: $white;
+}
+
+input,
+textarea,
+select,
+button {
+	font-family: $font;
+}
+
+input,
+textarea {
+  @extend %reset-block-model;
+}
+
+input[type="text"], input[type="password"] {
+  border: none;
+  border-bottom: 1px solid $white;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+  font-style: italic;
+}
+
+table {
+  margin-bottom: 2rem;
+}
+
+//typography
+.color {
+  &--red {
+    color: $red;
+  }
+}
+
+.h1 {
+  font-size: $size-x-large;
+  line-height: $size-x-large * 1.5;
+  letter-spacing: 0.1rem;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.h2 {
+  font-size: $size-large;
+  letter-spacing: 0.1rem;
+  margin-bottom: 2rem;
+}
+h2, p {
+  text-align: center;
+}
+p {
+  letter-spacing: 0.1rem;
+  line-height: $size-medium * 1.5;
+}
+
+//buttons
+.btn {
+  padding: 1rem 1.5rem;
+  display: inline-block;
+  margin: 0 auto 2rem;
+  &--login {
+    font-size: 2rem;
+    background-color:$red;
+    color: $white;
+    border-radius: 0.3rem;
+    &:hover {
+      color: $white;
+      background-color: lighten($red, 10%);
+    }
+  }
+}
+
+//links
+.gen-link {
+  color: $white;
+  transition: all 0.3s ease;
+  display: inline-block;
+  &:after {
+    content: '';
+    display: block;
+    width: 100%;
+    height: 2px;
+    background: transparent;
+    transition: all 0.3s ease;
+    margin-top: 0.5rem;
+  }
+  &:hover {
+    color: $white;
+    text-decoration: none;
+    &:after {
+      background: $white;
+    }
+  }
+}
+//sections
+main {
+  width: 100%;
+  height: 100vh;
+}
+.main {
+  min-height: 100vh;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  &__count {
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+    transform: translate(5px, 1px);
+  }
+  &__login {
+    padding-top: 2rem;
+  }
+}
+
+//images
+figure {
+
+}
+.baby-pic {
+  max-width: 100%;
+  transition: all 0.3s ease;
+}
+
+.baby-link {
+  display: block;
+  overflow: hidden;
+  &:hover {
+    .baby-pic {
+      transform: scale(1.1);
+    }
+  }
+}
+
+.result {
+  min-height: 100px;
+  position: relative;
+  &__line {
+    position: absolute;
+    opacity: 0;
+    transition: all 0.3s ease;
+    &.active {
+      opacity: 1;
+    }
+  }
+}

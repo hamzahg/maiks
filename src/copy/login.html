@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <title>Mystery Page</title>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="row">
+          <div class="col-12 main">
+            <div class="main__content">
+              <form method="post" action="/authenticate/login/">
+                <input type="hidden" name="csrfmiddlewaretoken" value="mZBNbLiIjp2G2IXtUVe7RbJ0fi5b3QPD6uqdixnW79q1EiPhyHWdd6fRfa7eb818" />
+                <table>
+                  <tr>
+                    <td><label for="id_username">Username:</label></td>
+                    <td>
+                      <input type="text" name="username" autofocus required id="id_username" />
+                    </td>
+                  </tr>
+
+                  <tr>
+                    <td><label for="id_password">Password:</label></td>
+                    <td>
+                      <input type="password" name="password" required id="id_password" />
+                    </td>
+                  </tr>
+                </table>
+
+                <input type="submit" value="login" class="btn btn--login" />
+                <input type="hidden" name="next" value="" />
+              </form>
+
+              <p><a href="/authenticate/password_reset/" class="gen-link">Lost password?</a></p>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="js/some-code.js"></script>
+    <script src="js/main.polyfills.js"></script>
+  </body>
+</html>

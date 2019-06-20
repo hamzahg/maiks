@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link href="https://fonts.googleapis.com/css?family=Oswald&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <title>Mystery Page</title>
+  </head>
+  <body>
+    <main>
+      <section class="container">
+        <div class="row">
+          <div class="col-12 main">
+            <div class="main__content">
+              <div class="row">
+                <div class="col-12 col-md-4">
+                  <figure>
+                    <a href="#" class="baby-link animated zoomIn" data-target="0">
+                      <img src="img/Baby_Maikol.jpg" class="baby-pic" alt="" />
+                    </a>
+                  </figure>
+                </div>
+                <div class="col-12 col-md-4">
+                  <figure>
+                    <a href="#" class="baby-link animated zoomIn" data-target="1"> <img src="img/Baby_Sulina_gray.jpg" class="baby-pic" alt=""/></a>
+                  </figure>
+                </div>
+                <div class="col-12 col-md-4">
+                  <figure>
+                    <a href="#" class="baby-link animated zoomIn" data-target="2"> <img src="img/Baby_Anton_gray.jpg" class="baby-pic" alt=""/></a>
+                  </figure>
+                </div>
+              </div>
+
+              <div class="result">
+                <p class="h2 result__line" data-image="0">Really? Really? Do you really think that could possibly have been the King when younger?!?!</p>
+                <p class="h2 result__line" data-image="1">Foolish!!</p>
+                <p class="h2 result__line" data-image="2">
+                  It's with great regret that I inform you that you lose. The treasure will forever remain outside your grasp as you will not be able to guess from this device again.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha256-pasqAKBDmFT4eHoN2ndd6lN370kFiGUFyTiUHWhU7k8=" crossorigin="anonymous"></script>
+    <script src="js/another-file.js"></script>
+
+    <script src="js/main.polyfills.js"></script>
+    <script>
+      $('.baby-link').on('mouseover', function(index) {
+        let imageId = $(this).data('target');
+
+        $('.result__line').each(function() {
+          if ($(this).data('image') === imageId) {
+            $(this).addClass('active');
+          } else {
+            $(this).removeClass('active');
+          }
+        });
+      });
+    </script>
+  </body>
+</html>
